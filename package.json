@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "cross-env ENV=demo npx playwright test",
+    "test:dev": "cross-env ENV=dev npx playwright test",
+    "test:headed": "cross-env ENV=demo npx playwright test --headed",
+    "test:debug": "cross-env ENV=demo npx playwright test --debug",
+    "test:report": "npx playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -13,7 +19,8 @@
     "@types/node": "^25.0.9"
   },
   "dependencies": {
-    "cross-env": "^10.1.0", 
+    "cross-env": "^10.1.0",
+    "crypto-js": "^4.2.0",
     "dotenv": "^17.2.3"
   }
 }

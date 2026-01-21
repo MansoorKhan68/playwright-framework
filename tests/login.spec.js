@@ -9,4 +9,4 @@ test('Login Test', async ({ page, loginPage }) => {
         }
         await loginPage.loginORangeHRM(username, password);
     await expect(loginPage.dashboardHeading).toBeVisible({timeout:5000});
-})
+});
