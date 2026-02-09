@@ -41,13 +41,21 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'setup',
+      testMatch: 'global.setup.js',
+    },
+    {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      dependencies: ['setup'],
+      use: { ...devices['Desktop Chrome'],
+        storageState: './playwright/.auth/auth.json'
+       },
     },
 
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',
+    // dependencies: ['setup'],
     //   use: { ...devices['Pixel 5'] },
     // },
     // {
